@@ -29,6 +29,6 @@
 Tarefa tarefa1 = new Tarefa("Estudar POO", "Revisar os conceitos de classes e objetos", "2024-09-05", 1);
 ```
 
-# Referência
+## Referência
 
-DEITEL, P. J.; DEITEL, H. M. **Java: como programar**. 10. ed. São Paulo, SP: Pearson, 201.
+DEITEL, P. J.; DEITEL, H. M. **Java: como programar**. 10. ed. São Paulo, SP: Pearson, 2016.
