@@ -13,14 +13,7 @@ class Tarefa {
         this.prioridade = prioridade;
     }
 
-    public Tarefa(String titulo) {
-        this.titulo = titulo;
-        this.descricao = new String();
-        this.prazo = "";
-        this.prioridade = 0;
-    }
-
-    // Métodos Get e Set
+    // Métodos públicos para acessar os atributos
     public String getTitulo() {
         return this.titulo;
     }
@@ -37,7 +30,15 @@ class Tarefa {
         this.descricao = descricao;
     }
 
-    // Implementar getters e settes para os outros atributos
+    public String getPrazo() {
+        return this.prazo;
+    }
+
+    public void setPrazo(String prazo) {
+        this.prazo = prazo;
+    }
+
+    
     public void exibirDetalhes() {
         System.out.println("Título: " + this.titulo);
         System.out.println("Descrição: " + this.descricao);
@@ -48,8 +49,14 @@ class Tarefa {
 
 public class Main {
     public static void main(String[] args){
-        Tarefa tarefa1 = new Tarefa("Estudar POO", "Revisar os conceitos de classes e objetos", "06-09-2024", 1);
+        Tarefa tarefa1 = new Tarefa("Estudar POO", "Revisar os conceitos de classes e objetos", "2024-09-05", 1);
+
+        System.out.println("=============== Testando métodos gets ===============");
         System.out.println("Título: " + tarefa1.getTitulo());
+        System.out.println("Descrição: " + tarefa1.getDescricao());
+        System.out.println();
+
+        System.out.println("=============== Imprimindo com método exibitDetalhes() ===============");
         tarefa1.exibirDetalhes();
     }
 }
