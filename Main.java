@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 class Tarefa {
     // Atributos privados
     private String titulo;
@@ -5,12 +8,20 @@ class Tarefa {
     private String prazo;
     private int prioridade;
 
-    // Construtor
+    // Construtor 1: Construtor completo.
     public Tarefa(String titulo, String descricao, String prazo, int prioridade) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.prazo = prazo;
         this.prioridade = prioridade;
+    }
+
+    // Construtor 2: Construtor com menos parâmetros.
+    public Tarefa(String titulo, String prazo) {
+        this.titulo = titulo;
+        this.prazo = prazo;
+        this.descricao = "";    // Descrição padrão
+        this.prioridade = 0;    // Prioridade padrão
     }
 
     // Métodos públicos para acessar os atributos
@@ -45,11 +56,19 @@ class Tarefa {
         System.out.println("Prazo: " + this.prazo);
         System.out.println("Prioridade: " + this.prioridade);
     }
+
+    // Método para calcular dias restantes
+    public long calcularDiasRestantes() {
+        LocalDate dataPrazo = LocalDate.parse(this.prazo);
+        LocalDate hoje = LocalDate.now();
+
+        return ChronoUnit.DAYS.between(hoje, dataPrazo);
+    }
 }
 
 public class Main {
     public static void main(String[] args){
-        Tarefa tarefa1 = new Tarefa("Estudar POO", "Revisar os conceitos de classes e objetos", "2024-09-05", 1);
+        Tarefa tarefa1 = new Tarefa("Estudar POO", "Revisar os conceitos de classes e objetos", "2024-09-15", 1);
 
         System.out.println("=============== Testando métodos gets ===============");
         System.out.println("Título: " + tarefa1.getTitulo());
@@ -58,5 +77,14 @@ public class Main {
 
         System.out.println("=============== Imprimindo com método exibitDetalhes() ===============");
         tarefa1.exibirDetalhes();
+
+        System.out.println("=============== Imprimindo tarefa com o costrutor 2 ===============");
+
+        Tarefa tarefa2 = new Tarefa("Estudar para provas", "2050-10-25");
+
+        tarefa2.exibirDetalhes();
+
+
+        System.out.println("Dias restantes para a tarefa 1: " + tarefa2.calcularDiasRestantes());
     }
 }
