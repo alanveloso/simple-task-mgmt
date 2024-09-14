@@ -15,3 +15,15 @@
 * Adicionar método para calcular o tempo restante até o prazo da tarefa.
 * Detalhes:
     * Método: `cacularDiasRestantes()` usa `LacalDate` e `ChronoUnit` para calcular a diferente entre hoje e prazo da tarefa.
+
+## Encapsulamento avançado e boas práticas
+
+* Esconder detalhes internos da implamentação e expor somente o necessário.
+* Objetivo: Protejar os dados da classe e garantir que apenas métodos autorizados possam alterá-los.
+* Datalhes:
+    * Método privado: `isPrazoValido()` valida o formato do prazo.
+    * Método públic: `setPrazo()` usa a validação antes de definir o valor.
+
+## Boas práticas na estrutura de classes
+* Práticas recomendadas para garatir qe o código seja limpo, eficiente e fácil de manter.
+* Objetivo: Mantter a classe foca em uma única resposabilidade, utilizar nomes claros e evitar repetição de código.
