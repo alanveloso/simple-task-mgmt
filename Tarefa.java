@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.time.format.DateTimeParseException;
 
-public class Tarefa {
+public class Tarefa implements AcoesTarefa {
     // Atributos privados
     private String titulo;
     private String descricao;
@@ -64,7 +64,8 @@ public class Tarefa {
         }
     }
 
-    
+    // public abstract void exibirDetalhes();
+
     public void exibirDetalhes() {
         System.out.println("Título: " + this.titulo);
         System.out.println("Descrição: " + this.descricao);
@@ -78,5 +79,15 @@ public class Tarefa {
         LocalDate hoje = LocalDate.now();
 
         return ChronoUnit.DAYS.between(hoje, dataPrazo);
+    }
+
+    @Override
+    public void executarTarefa() {
+        System.out.println("Tarefa " + this.titulo + " foi executada.");
+    }
+
+    @Override
+    public void cancelarTarefa() {
+        System.out.println("Tarefa " + this.titulo + " foi cancelada.");
     }
 }
