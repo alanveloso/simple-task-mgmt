@@ -9,9 +9,7 @@
 
   - **Exemplo Real:** Imagine que temos diferentes tipos de tarefas (como "TarefaUrgente" ou "TarefaComPrazoFlexível"). Em vez de repetir código, essas classes podem herdar a base da classe `Tarefa` e adicionar ou modificar comportamentos.
 
-<div style="text-align: center;">
-  ![Herança entre classe Tarefa, Tarefa Urgente e Tarefa Com Prazo Flexível](img/heranca_TarefaPrazoFlexivel.png "Herança de tarefas")
-</div>
+![Herança entre classe Tarefa, Tarefa Urgente e Tarefa Com Prazo Flexível](img/heranca_TarefaPrazoFlexivel.png "Herança de tarefas")
 
 - **Aplicação ao Projeto:**
   - Criaremos classes que herdam de `Tarefa`, permitindo especializações e funcionalidades adicionais.
